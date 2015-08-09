@@ -1,0 +1,17 @@
+{
+  "name": "orders",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.3",
+    "angular-route": "~1.4.3",
+    "angular-translate": "~2.7.2",
+    "jquery": "~2.1.4",
+    "animate.css": "~3.3.0",
+    "bootstrap": "~3.3.5",
+    "fontawesome": "~4.3.0",
+    "angular-sanitize": "~1.4.3",
+    "jshint-stylish": "~2.0.1"
+  }
+}
