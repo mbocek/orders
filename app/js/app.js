@@ -1,14 +1,18 @@
-/*jslint node: true */
 'use strict';
 
-var app = angular.module('app', [ 'ngRoute', 'ngSanitize', 'pascalprecht.translate', 'app.controllers' ]);
+var app = angular.module('app', [ 'ngRoute', 'ngSanitize', 'pascalprecht.translate', 'app.controllers', 'app.services', 'app.directives']);
+
+angular.module('app.controllers', [ ]);
+angular.module('app.services', ['ngResource']);
 
 app.config(['$routeProvider', function($routeProvider) {
 	$routeProvider
-        .when('/signin', { templateUrl : 'view/login.html', controller : 'UserController' })
+        .when('/', { templateUrl : 'view/default.html' })
+        .when('/signin', { templateUrl : 'view/signin.html', controller: 'UserController' })
+        .when('/signup', { templateUrl : 'view/signup.html', controller: 'UserController' })
         .otherwise({redirectTo : '/'});
 }])
-.factory('authHttpResponseInterceptor',['$q','$location', '$log', function($q, $location, $log){
+.factory('authHttpResponseInterceptor',['$q','$location', '$log',function($q, $location, $log){
     return {
         response: function(response){
             if (response.status === 401) {
@@ -32,8 +36,8 @@ app.config(['$routeProvider', function($routeProvider) {
     $httpProvider.interceptors.push('authHttpResponseInterceptor');
 }])
 .config(['$translateProvider', function ($translateProvider) {
-    $translateProvider
-        .translations('en', translationsEN)
-        .preferredLanguage('en')
-        .useSanitizeValueStrategy('sanitize');
+  $translateProvider
+    .translations('en', translationsEN)
+    .preferredLanguage('en')
+    .useSanitizeValueStrategy('sanitize');
 }]);
