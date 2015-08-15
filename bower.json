@@ -4,14 +4,14 @@
   "license": "Apache-2.0",
   "private": true,
   "dependencies": {
-    "angular": "~1.4.3",
-    "angular-route": "~1.4.3",
+    "angular": "~1.4.4",
+    "angular-route": "~1.4.4",
+    "angular-resource": "~1.4.4",
+    "angular-sanitize": "~1.4.4",
     "angular-translate": "~2.7.2",
     "jquery": "~2.1.4",
     "animate.css": "~3.3.0",
     "bootstrap": "~3.3.5",
-    "fontawesome": "~4.3.0",
-    "angular-sanitize": "~1.4.3",
-    "jshint-stylish": "~2.0.1"
+    "fontawesome": "~4.3.0"
   }
 }
